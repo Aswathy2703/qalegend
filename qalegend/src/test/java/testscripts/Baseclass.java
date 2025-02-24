@@ -1,5 +1,7 @@
 package testscripts;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -25,6 +27,7 @@ public class Baseclass {
 		{
 			throw new Exception("Invalid browser name");
 		}
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		return driver;
 	}
 }

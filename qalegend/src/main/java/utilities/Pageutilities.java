@@ -64,7 +64,7 @@ public class Pageutilities {
 	public static void navigateBack(WebDriver driver) {
 		driver.navigate().back();
 	}
-	public static void navigateTo(WebElement element, WebDriver driver, String value) {
+	public static void navigateTo(WebDriver driver, String value) {
 		driver.navigate().to(value);
 	}
 	public static void navigateForward(WebDriver driver) {
@@ -79,17 +79,18 @@ public class Pageutilities {
 	public static void alertToDismiss(WebDriver driver) {
 		driver.switchTo().alert().dismiss();
 	}
-	public static String getText(WebElement element, WebDriver driver, String text) {
+	public static String getText(WebElement element) {//get a visible text
 		return(element.getText());
 	}
-	public static String getAttribute(WebElement element, WebDriver driver, String text) {
-		return(element.getAttribute(text));
+	public static String getAttribute(WebElement element, String attributename) {
+		return(element.getAttribute(attributename));
 	}
-	
+	public static void clearText(WebElement element) {
+		element.clear();
+	}
 	
 	
 	
 	
 }
-//is enable, getattribute, 
-//get text, 
+ 

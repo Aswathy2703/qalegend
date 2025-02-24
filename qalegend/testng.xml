@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="testscripts.Qalegenduserstest">
+      <methods>
+   <!--  <include name="createAUser"></include>-->
+    <!--  <include name="deleteAUser"></include>-->
+    <!--  <include name="editAUser"><-->/include>
+      <include name="addSalesCommissionAgent"></include>
+      </methods>
+      </class>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

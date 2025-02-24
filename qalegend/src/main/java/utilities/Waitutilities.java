@@ -29,8 +29,13 @@ public class Waitutilities {
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(Constants.EXPLICITWAIT));
 		wait.until(ExpectedConditions.visibilityOf(element));
 		}
-	
-	
-	//alert wait,  attribute value wait(attribute tobe
+	public static void waitForanAlert(WebDriver driver) {
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(Constants.EXPLICITWAIT));
+		wait.until(ExpectedConditions.alertIsPresent());	
+	}
+	public static void waitForanElementAttributetobe(WebElement element, WebDriver driver, String attributevalue, String attributename) {
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(Constants.EXPLICITWAIT));
+		wait.until(ExpectedConditions.attributeToBe(element, attributename, attributevalue));	
+	}
 	
 }
