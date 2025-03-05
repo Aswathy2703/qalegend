@@ -1,15 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Suite">
+<listeners>
+<listener class-name="testscripts.listeners"></listener>
+</listeners>
   <test thread-count="5" name="Test">
     <classes>
-      <class name="testscripts.Qalegenduserstest">
+<class name="testscripts.Qalegenduserstest">
       <methods>
-   <!--  <include name="createAUser"></include>-->
-    <!--  <include name="deleteAUser"></include>-->
-    <!--  <include name="editAUser"><-->/include>
-      <include name="addSalesCommissionAgent"></include>
-      </methods>
-      </class>
+			<include name="createAUser"></include>
+   			<include name="deleteAUser"></include>
+			<include name="editAUser"></include>
+     		<include name="addSalesCommissionAgent"></include>
+        </methods>
+    </class>
+<class name="testscripts.QalegendContacttest">
+    <method>
+    		<include name="addSupplier"></include>
+    		<include name="editAsupplier"></include>
+    		<include name="createACustomer"></include>
+			<include name="deleteACustomer"></include>
+    </method>
+   </class>
+<class name="testscript.Qalegendroletest">
+   <method>
+   			<include name="createRoleName"></include>
+  			<include name="deleteRoleName"></include>
+   </method>
+   </class>
     </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+  </test> 
+</suite> 

@@ -20,7 +20,14 @@ WebElement userButton;
 WebElement endTourButton;
 @FindBy(xpath = "(//span[@class='title'])[4]")
 WebElement salesCommissionAgentButton;
-
+@FindBy(xpath = "//span[text()='Contacts']")
+WebElement contactButton;
+@FindBy(xpath = "(//i[@class='fa fa-star']//parent::a)[1]")
+WebElement supplierButton;
+@FindBy(xpath = "(//i[@class='fa fa-star']//parent::a)[2]")
+WebElement customerButton;
+@FindBy(xpath="(//span[@class='title'])[3]")
+WebElement roleButton;
 
 
 
@@ -44,7 +51,17 @@ public void endTourButtonClick() {
 public void clickOnSalesCommissionAgentButton() {
 	salesCommissionAgentButton.click();
 	}
-
-
-
+public void clickOnContactButton() {
+	contactButton.click();	
+}
+public void clickOnSupplierButton() {
+	supplierButton.click();
+}
+public void clickOnCustomerButton() {
+	customerButton.click();
+}
+public void clickOnRoleButton() {
+	roleButton.click();
+	
+}
 }

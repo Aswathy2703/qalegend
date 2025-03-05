@@ -40,14 +40,12 @@ WebElement userUpdateButton;
 WebElement addSCAgentButton;
 @FindBy(id="first_name")
 WebElement firstnameSCAField;
-@FindBy(id="email")
-WebElement emailSCAField;
-@FindBy(id="password")
-WebElement passwordSCAField;
-@FindBy(id="confirm_password")
-WebElement confirmPasswordSCAField;
+@FindBy(id="cmmsn_percent")
+WebElement salesComsnPercentage;
 @FindBy(xpath="//button[@class='btn btn-primary']")
 WebElement saveButtonSCA;
+@FindBy(xpath="(//tr[@class='odd' or @class='even']//td)[1]")
+WebElement scaNamecell;
 
 
 public QalegendUserpage(WebDriver driver) {
@@ -92,12 +90,16 @@ public String getEmptyTableStatus() {
 public WebElement addSCAgent() {
 	return(addSCAgentButton);
 }
-public QalegendUserpage addSCAgent(String firstname, String email, String password) {
+public QalegendUserpage addSCAgent(String firstname, int percentage) {
 	Pageutilities.enterText(firstnameSCAField, firstname);
-	Pageutilities.enterText(emailSCAField, email);
-	Pageutilities.enterText(passwordSCAField, password);
-	Pageutilities.enterText(confirmPasswordSCAField, password);
+	Pageutilities.enterText(salesComsnPercentage, Integer.toString(percentage));
 	Pageutilities.ClickOnAnElement(saveButtonSCA);
 	return this;
 }
+public String scANameFinder() {
+	String name=Pageutilities.getText(scaNamecell);
+	return name;
+}
+
+
 }

@@ -29,5 +29,10 @@ public class Fakerutility {
 		int randomnumber=random.nextInt(100000);
 		return randomnumber;
 			}
-	
+	public static String getFakeName() {// create a unique test data, faker class(inbuilt class) are used
+		Faker faker=new Faker();
+		Address address=faker.address();
+		String text= address.firstName();
+		return text;
+		}
 }
