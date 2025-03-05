@@ -1,5 +1,6 @@
 package pageclasses;
 
+import org.apache.commons.math3.ml.neuralnet.UpdateAction;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -71,18 +72,30 @@ public QalegendContactpage addsupplier(String name, String businessName, String 
 		String name=Pageutilities.getText(supNamecell);
 		return name;
 	}
-	public QalegendContactpage supActionBtn()) {
+	public void ClickOnSupActionBtn() {
 		Pageutilities.ClickOnAnElement(supActionButton);
-		return this;
-		
 	}
-		public QalegendContactpage editSupplier() {
+	public void clickOnEditSupBtn() {
 		Pageutilities.ClickOnAnElement(supEditButton);
-		Pageutilities.ClickOnAnElement(supUpdateButton);
-		return this;
-		
 	}
-	public QalegendContactpage deleteSupplier(String name, String businessName, String number) {
+public void clickOnUpdateSupBtn() {
+	Pageutilities.ClickOnAnElement(supUpdateButton);
+}
+public void name() {
+	
+}
+public void editSupBuisnessName(String buisnessname) {
+	supUpdateButton.clear();
+	supUpdateButton.sendKeys(buisnessname);
+}
+	
+public QalegendContactpage editSupplier() {
+	Pageutilities.ClickOnAnElement(supEditButton);
+	Pageutilities.ClickOnAnElement(supUpdateButton);
+	return this;
+	}
+
+public QalegendContactpage deleteSupplier(String name, String businessName, String number) {
 		Pageutilities.enterText(supNameField, name);
 		Pageutilities.enterText(supBussinessNameField, businessName);
 		Pageutilities.enterText(supMobileNumField, number);

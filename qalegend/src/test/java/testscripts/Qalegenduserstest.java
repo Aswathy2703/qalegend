@@ -39,7 +39,6 @@ String name= Fakerutility.getFakeFirstName();
 String emailId=name+Fakerutility.getRandomNumber()+"@gmail.com";
 String password="abcde12";
 userpage.addUser(name, emailId, password);
-driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 userpage.searchUser(name);
 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 Assert.assertEquals(userpage.userNameFinder(), name);
@@ -57,9 +56,7 @@ public void deleteAUser() {
 	String password="abcde12";
 	userpage.addUser(name, emailId, password);
 	userpage.searchUser(name);
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	userpage.deleteUser();
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	userpage.searchUser(name);
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	Assert.assertEquals(userpage.getEmptyTableStatus(), "No matching records found");
@@ -76,10 +73,9 @@ public void editAUser() throws InterruptedException{
 	String emailId=name+Fakerutility.getRandomNumber()+"@gmail.com";
 	String password="abcde12";
 	userpage.addUser(name, emailId, password);
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	userpage.searchUser(name);
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	userpage.editUser();
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	Assert.assertEquals(userpage.userNameFinder(), name);
 	
 }

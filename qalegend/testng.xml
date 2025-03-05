@@ -14,18 +14,18 @@
         </methods>
     </class>
 <class name="testscripts.QalegendContacttest">
-    <method>
+    <methods>
     		<include name="addSupplier"></include>
     		<include name="editAsupplier"></include>
     		<include name="createACustomer"></include>
 			<include name="deleteACustomer"></include>
-    </method>
+    </methods>
    </class>
-<class name="testscript.Qalegendroletest">
-   <method>
+<class name="testscripts.Qalegendroletest">
+   <methods>
    			<include name="createRoleName"></include>
   			<include name="deleteRoleName"></include>
-   </method>
+   </methods>
    </class>
     </classes>
   </test> 

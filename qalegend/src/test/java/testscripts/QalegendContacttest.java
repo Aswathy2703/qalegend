@@ -29,8 +29,7 @@ public void addSupplier() throws InterruptedException, IOException {
 	homepage.clickOnContactButton();
 	homepage.clickOnSupplierButton();
 	contactpage.addSupplierBtn();
-	Thread.sleep(3000);
-			//String name=Fakerutility.getFakeFirstName();
+				//String name=Fakerutility.getFakeFirstName();
 	String name=ExcelUtilities.getStringData(1,0,Constants.EXCELFILEPATH,"Sheet1")+Fakerutility.getRandomNumber();
 	String buisnessname=ExcelUtilities.getStringData(1, 1, Constants.EXCELFILEPATH, "Sheet1")+Fakerutility.getRandomNumber();
 	String number=ExcelUtilities.getIntegerData(1, 2, Constants.EXCELFILEPATH, "Sheet1")+Fakerutility.getRandomNumber();
@@ -38,6 +37,7 @@ public void addSupplier() throws InterruptedException, IOException {
 			//int number= Fakerutility.getRandomNumber();
 	contactpage.addsupplier(name, buisnessname, number);	
 	contactpage.searchSupplier(name);
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	Assert.assertEquals(contactpage.supplierNameFinder(), name);
 				
 		}	
@@ -48,15 +48,19 @@ public void editAsupplier() throws InterruptedException, IOException {
 	homepage.clickOnUserManagementButton();
 	homepage.clickOnUserButton();
 	contactpage.addSupplierBtn();
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	String name=ExcelUtilities.getStringData(1,0,Constants.EXCELFILEPATH,"Sheet1")+Fakerutility.getRandomNumber();
 	String buisnessname=ExcelUtilities.getStringData(1, 1, Constants.EXCELFILEPATH, "Sheet1")+Fakerutility.getRandomNumber();
 	String number=ExcelUtilities.getIntegerData(1, 2, Constants.EXCELFILEPATH, "Sheet1")+Fakerutility.getRandomNumber();
 	contactpage.addsupplier(name, buisnessname, number);
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	contactpage.searchSupplier(name);
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-	contactpage.
+	contactpage.ClickOnSupActionBtn();
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+	String supBuisnessname=ExcelUtilities.getStringData(1, 3, Constants.EXCELFILEPATH, "Sheet1")+Fakerutility.getRandomNumber();
+	contactpage.editSupBuisnessName(buisnessname);
+	contactpage.clickOnUpdateSupBtn();
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+	contactpage.searchSupplier(name);
 	Assert.assertEquals(userpage.getEmptyTableStatus(), "No matching records found");
 
 }
@@ -67,16 +71,14 @@ public void createACustomer() throws InterruptedException {
 	homepage.clickOnContactButton();
 	homepage.clickOnCustomerButton();
 	contactpage.addCustomerBtn();
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	String name=Fakerutility.getFakeFirstName();
 	String mobile="234567888";
 	contactpage.addCustomer(name, mobile);
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	contactpage.searchCustomer(name);
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	Assert.assertEquals(contactpage.customerNameFinder(), name);
 	}
-
+@Test
 public void deleteACustomer() throws InterruptedException {
 	loginpage.loginToQalegend(prop.getProperty("username"), prop.getProperty("password"));
 	homepage.endTourButtonClick();

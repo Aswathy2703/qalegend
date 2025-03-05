@@ -12,17 +12,12 @@ public class Qalegendroletest extends Baseclass{
 @Test
 	public void createRoleName() throws InterruptedException 
 	{
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		loginpage.loginToQalegend(prop.getProperty("username"),prop.getProperty("password"));
 		homepage.endTourButtonClick();
 		homepage.clickOnUserManagementButton();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		homepage.clickOnRoleButton();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		rolepage.addRoleBtn().click();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		String rolename=Fakerutility.getFakeFirstName();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		rolepage.addRole(rolename);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		rolepage.searchRole(rolename);
@@ -42,7 +37,6 @@ public class Qalegendroletest extends Baseclass{
 		String rolename=Fakerutility.getFakeFirstName();
 		rolepage.addRole(rolename);
 		rolepage.searchRole(rolename);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		rolepage.deleteRole();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		rolepage.searchRole(rolename);

@@ -16,13 +16,12 @@ import org.testng.annotations.BeforeMethod;
 import pageclasses.QaLegendRolePage;
 import pageclasses.QalegendContactpage;
 import pageclasses.QalegendHomePage;
-import pageclasses.QalegendRolePage;
 import pageclasses.QalegendUserpage;
 import pageclasses.Qalegend_loginpage;
 import utilities.ScreenshotUtilities;
 
 public class Baseclass {
-	public WebDriver driver;
+	WebDriver driver;
 	Qalegend_loginpage loginpage;
 	QalegendHomePage homepage;
 	QalegendUserpage userpage;
@@ -30,6 +29,8 @@ public class Baseclass {
 	Properties prop;
 	FileInputStream fis;
 	QaLegendRolePage rolepage;
+	
+	
 	public WebDriver initializemethod (String browser) throws Exception
 	{
 		if (browser.equalsIgnoreCase("Chrome"))
