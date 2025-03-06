@@ -75,7 +75,8 @@ public void createACustomer() throws InterruptedException {
 	String mobile="234567888";
 	contactpage.addCustomer(name, mobile);
 	contactpage.searchCustomer(name);
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+	
+	//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	Assert.assertEquals(contactpage.customerNameFinder(), name);
 	}
 @Test

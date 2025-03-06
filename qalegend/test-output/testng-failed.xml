@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testscripts.QalegendContacttest">
+      <class name="testscripts.Qalegenduserstest">
         <methods>
           <include name="afterMethod"/>
           <include name="browserInitialization"/>
-          <include name="createACustomer"/>
+          <include name="editAUser"/>
         </methods>
-      </class> <!-- testscripts.QalegendContacttest -->
+      </class> <!-- testscripts.Qalegenduserstest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

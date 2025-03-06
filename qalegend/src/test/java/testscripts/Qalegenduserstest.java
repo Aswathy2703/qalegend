@@ -58,7 +58,7 @@ public void deleteAUser() {
 	userpage.searchUser(name);
 	userpage.deleteUser();
 	userpage.searchUser(name);
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+	
 	Assert.assertEquals(userpage.getEmptyTableStatus(), "No matching records found");
 
 }
