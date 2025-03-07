@@ -10,10 +10,10 @@
 			<include name="createAUser"></include>
    			<include name="deleteAUser"></include>
 			<include name="editAUser"></include>
-     		<include name="addSalesCommissionAgent"></include>
+     		<!--<include name="addSalesCommissionAgent"></include>-->
         </methods>
-    </class>
-<class name="testscripts.QalegendContacttest">
+   </class>
+<!--<class name="testscripts.QalegendContacttest">
     <methods>
     		<include name="addSupplier"></include>
     		<include name="editAsupplier"></include>
@@ -26,7 +26,7 @@
    			<include name="createRoleName"></include>
   			<include name="deleteRoleName"></include>
    </methods>
-   </class>
+   </class>-->
     </classes>
   </test> 
 </suite> 

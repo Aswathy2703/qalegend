@@ -13,27 +13,8 @@
           <include name="browserInitialization"/>
           <include name="createAUser"/>
           <include name="editAUser"/>
-          <include name="addSalesCommissionAgent"/>
         </methods>
       </class> <!-- testscripts.Qalegenduserstest -->
-      <class name="testscripts.Qalegendroletest">
-        <methods>
-          <include name="afterMethod"/>
-          <include name="browserInitialization"/>
-          <include name="deleteRoleName"/>
-          <include name="createRoleName"/>
-        </methods>
-      </class> <!-- testscripts.Qalegendroletest -->
-      <class name="testscripts.QalegendContacttest">
-        <methods>
-          <include name="afterMethod"/>
-          <include name="browserInitialization"/>
-          <include name="editAsupplier"/>
-          <include name="createACustomer"/>
-          <include name="addSupplier"/>
-          <include name="deleteACustomer"/>
-        </methods>
-      </class> <!-- testscripts.QalegendContacttest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

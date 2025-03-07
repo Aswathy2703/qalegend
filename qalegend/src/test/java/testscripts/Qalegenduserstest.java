@@ -40,7 +40,7 @@ String emailId=name+Fakerutility.getRandomNumber()+"@gmail.com";
 String password="abcde12";
 userpage.addUser(name, emailId, password);
 userpage.searchUser(name);
-driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
 Assert.assertEquals(userpage.userNameFinder(), name);
 
 }
