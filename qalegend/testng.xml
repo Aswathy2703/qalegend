@@ -3,17 +3,18 @@
 <listeners>
 <listener class-name="testscripts.listeners"></listener>
 </listeners>
-  <test thread-count="5" name="Test">
+  <test thread-count="5" name="Test" parallel="Methods">
+  <parameter name="browser" value="Chrome"></parameter>
     <classes>
 <class name="testscripts.Qalegenduserstest">
       <methods>
 			<include name="createAUser"></include>
    			<include name="deleteAUser"></include>
 			<include name="editAUser"></include>
-     		<!--<include name="addSalesCommissionAgent"></include>-->
-        </methods>
-   </class>
-<!--<class name="testscripts.QalegendContacttest">
+     		<include name="addSalesCommissionAgent"></include>
+      </methods>
+  </class>
+<class name="testscripts.QalegendContacttest">
     <methods>
     		<include name="addSupplier"></include>
     		<include name="editAsupplier"></include>
@@ -26,7 +27,7 @@
    			<include name="createRoleName"></include>
   			<include name="deleteRoleName"></include>
    </methods>
-   </class>-->
+   </class>
     </classes>
   </test> 
 </suite> 

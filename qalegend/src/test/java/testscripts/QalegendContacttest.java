@@ -18,11 +18,12 @@ import pageclasses.QalegendUserpage;
 import pageclasses.Qalegend_loginpage;
 import utilities.ExcelUtilities;
 import utilities.Fakerutility;
+import utilities.RetryAnalyzer;
 
 public class QalegendContacttest extends Baseclass {
 		WebDriver driver;
 		
-@Test
+@Test(retryAnalyzer = RetryAnalyzer.class, priority = 6)
 public void addSupplier() throws InterruptedException, IOException {
 	loginpage.loginToQalegend(prop.getProperty("username"),prop.getProperty("password"));
 	homepage.endTourButtonClick();
@@ -37,11 +38,10 @@ public void addSupplier() throws InterruptedException, IOException {
 			//int number= Fakerutility.getRandomNumber();
 	contactpage.addsupplier(name, buisnessname, number);	
 	contactpage.searchSupplier(name);
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-	Assert.assertEquals(contactpage.supplierNameFinder(), name);
+		Assert.assertEquals(contactpage.supplierNameFinder(), name);
 				
 		}	
-@Test
+@Test(retryAnalyzer = RetryAnalyzer.class, priority = 7)
 public void editAsupplier() throws InterruptedException, IOException {
 	loginpage.loginToQalegend(prop.getProperty("username"),prop.getProperty("password"));	
 	homepage.endTourButtonClick();
@@ -53,18 +53,15 @@ public void editAsupplier() throws InterruptedException, IOException {
 	String number=ExcelUtilities.getIntegerData(1, 2, Constants.EXCELFILEPATH, "Sheet1")+Fakerutility.getRandomNumber();
 	contactpage.addsupplier(name, buisnessname, number);
 	contactpage.searchSupplier(name);
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	contactpage.ClickOnSupActionBtn();
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	String supBuisnessname=ExcelUtilities.getStringData(1, 3, Constants.EXCELFILEPATH, "Sheet1")+Fakerutility.getRandomNumber();
 	contactpage.editSupBuisnessName(buisnessname);
 	contactpage.clickOnUpdateSupBtn();
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	contactpage.searchSupplier(name);
 	Assert.assertEquals(userpage.getEmptyTableStatus(), "No matching records found");
 
 }
-@Test
+@Test(retryAnalyzer = RetryAnalyzer.class, priority = 8)
 public void createACustomer() throws InterruptedException {
 	loginpage.loginToQalegend(prop.getProperty("username"), prop.getProperty("password"));
 	homepage.endTourButtonClick();
@@ -75,24 +72,19 @@ public void createACustomer() throws InterruptedException {
 	String mobile="234567888";
 	contactpage.addCustomer(name, mobile);
 	contactpage.searchCustomer(name);
-	
-	//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	Assert.assertEquals(contactpage.customerNameFinder(), name);
 	}
-@Test
+@Test(retryAnalyzer = RetryAnalyzer.class, priority = 9)
 public void deleteACustomer() throws InterruptedException {
 	loginpage.loginToQalegend(prop.getProperty("username"), prop.getProperty("password"));
 	homepage.endTourButtonClick();
 	homepage.clickOnContactButton();
 	homepage.clickOnCustomerButton();
 	contactpage.addCustomerBtn();
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	String name=Fakerutility.getFakeFirstName();
 	String mobile="234567888";
 	contactpage.addCustomer(name, mobile);
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	contactpage.searchCustomer(name);
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	Assert.assertEquals(contactpage.customerNameFinder(), name);
 	}
 

@@ -1,6 +1,7 @@
 package testscripts;
 
 import org.testng.annotations.Test;
+import org.testng.util.RetryAnalyzerCount;
 
 import Constants.Constants;
 
@@ -24,11 +25,12 @@ import pageclasses.Qalegend_loginpage;
 import utilities.ExcelUtilities;
 
 import utilities.Fakerutility;
+import utilities.RetryAnalyzer;
 
 public class Qalegenduserstest extends Baseclass {
 WebDriver driver;
 
-@Test
+@Test(retryAnalyzer = RetryAnalyzer.class, priority = 1)
 public void createAUser() {
 loginpage.loginToQalegend(prop.getProperty("username"),prop.getProperty("password"));	
 homepage.endTourButtonClick();
@@ -40,11 +42,10 @@ String emailId=name+Fakerutility.getRandomNumber()+"@gmail.com";
 String password="abcde12";
 userpage.addUser(name, emailId, password);
 userpage.searchUser(name);
-
 Assert.assertEquals(userpage.userNameFinder(), name);
 
 }
-@Test
+@Test(retryAnalyzer = RetryAnalyzer.class, priority = 2)
 public void deleteAUser() {
 	loginpage.loginToQalegend(prop.getProperty("username"),prop.getProperty("password"));	
 	homepage.endTourButtonClick();
@@ -58,11 +59,10 @@ public void deleteAUser() {
 	userpage.searchUser(name);
 	userpage.deleteUser();
 	userpage.searchUser(name);
-	
 	Assert.assertEquals(userpage.getEmptyTableStatus(), "No matching records found");
 
 }
-@Test 
+@Test(retryAnalyzer = RetryAnalyzer.class, priority = 3)
 public void editAUser() throws InterruptedException{
 	loginpage.loginToQalegend(prop.getProperty("username"),prop.getProperty("password"));
 	homepage.endTourButtonClick();
@@ -75,11 +75,10 @@ public void editAUser() throws InterruptedException{
 	userpage.addUser(name, emailId, password);
 	userpage.searchUser(name);
 	userpage.editUser();
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	Assert.assertEquals(userpage.userNameFinder(), name);
 	
 }
-@Test
+@Test(retryAnalyzer = RetryAnalyzer.class, priority = 10)
 public void addSalesCommissionAgent() throws InterruptedException {
 	loginpage.loginToQalegend(prop.getProperty("username"),prop.getProperty("password"));	
 	homepage.endTourButtonClick();

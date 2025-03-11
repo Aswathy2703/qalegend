@@ -37,5 +37,9 @@ public class Waitutilities {
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(Constants.EXPLICITWAIT));
 		wait.until(ExpectedConditions.attributeToBe(element, attributename, attributevalue));	
 	}
-	
+	public static void waitForElementtobeInvisible(WebDriver driver, WebElement element) {
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(Constants.EXPLICITWAIT));
+		wait.until(ExpectedConditions.invisibilityOf(element));
+		
+	}
 }

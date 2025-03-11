@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.Pageutilities;
+import utilities.Waitutilities;
 
 public class QalegendContactpage {
 	WebDriver driver;
@@ -81,9 +82,11 @@ public QalegendContactpage addsupplier(String name, String businessName, String 
 public void clickOnUpdateSupBtn() {
 	Pageutilities.ClickOnAnElement(supUpdateButton);
 }
-public void name() {
-	
+public void savSupplier() {
+	Pageutilities.ClickOnAnElement(supSaveButton);
+	Waitutilities.waitForElementtobeInvisible(driver, supSaveButton);
 }
+	
 public void editSupBuisnessName(String buisnessname) {
 	supUpdateButton.clear();
 	supUpdateButton.sendKeys(buisnessname);
@@ -119,4 +122,5 @@ public QalegendContactpage deleteSupplier(String name, String businessName, Stri
 		String name=Pageutilities.getText(custNamecell);
 		return name;
 	}
+	
 }

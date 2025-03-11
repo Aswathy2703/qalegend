@@ -12,6 +12,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
+
+import com.beust.jcommander.Parameter;
 
 import pageclasses.QaLegendRolePage;
 import pageclasses.QalegendContactpage;
@@ -56,9 +59,11 @@ public class Baseclass {
 	
 
 	@BeforeMethod
-	public void browserInitialization() throws Exception
+	@Parameters({"browser"})
+		
+	public void browserInitialization(String browserName) throws Exception
 	{
-		driver= initializemethod("Chrome");
+		driver= initializemethod(browserName);
 		//driver.get("https://qalegend.com/billing/public/login");
 		prop=new Properties();
 		String path=System.getProperty("user.dir")+"\\src\\main\\resources\\TestData\\data.properties";//to set dynamic path
