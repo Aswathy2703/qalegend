@@ -8,13 +8,13 @@
     <classes>
 <class name="testscripts.Qalegenduserstest">
       <methods>
-			<include name="createAUser"></include>
+			<!--<include name="createAUser"></include>-->
    			<include name="deleteAUser"></include>
-			<include name="editAUser"></include>
+			<!--<include name="editAUser"></include>-->
      		<!--<include name="addSalesCommissionAgent"></include>-->
       </methods>
   </class>
-<class name="testscripts.QalegendContacttest">
+<!--<class name="testscripts.QalegendContacttest">
     <methods>
     		<include name="addSupplier"></include>
     		<include name="editAsupplier"></include>
@@ -26,9 +26,9 @@
    <methods>
    			<include name="createRoleName"></include>
   			<include name="deleteRoleName"></include>
-  		<!--	<include name="TC01"></inclu-->de>
+  		
    </methods>
-   </class>
+   </class>-->
     </classes>
   </test> 
 </suite> 

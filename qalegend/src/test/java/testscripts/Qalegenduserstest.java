@@ -45,7 +45,7 @@ userpage.searchUser(name);
 Assert.assertEquals(userpage.userNameFinder(), name);
 
 }
-@Test(retryAnalyzer = RetryAnalyzer.class, priority = 2, groups = "smoke")
+@Test
 public void deleteAUser() {
 	loginpage.loginToQalegend(prop.getProperty("username"),prop.getProperty("password"));	
 	homepage.endTourButtonClick();
