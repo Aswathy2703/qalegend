@@ -23,7 +23,7 @@ import utilities.RetryAnalyzer;
 public class QalegendContacttest extends Baseclass {
 		WebDriver driver;
 		
-@Test(retryAnalyzer = RetryAnalyzer.class, priority = 6)
+@Test(retryAnalyzer = RetryAnalyzer.class, priority = 6,  groups = "smoke")
 public void addSupplier() throws InterruptedException, IOException {
 	loginpage.loginToQalegend(prop.getProperty("username"),prop.getProperty("password"));
 	homepage.endTourButtonClick();
@@ -41,7 +41,7 @@ public void addSupplier() throws InterruptedException, IOException {
 		Assert.assertEquals(contactpage.supplierNameFinder(), name);
 				
 		}	
-@Test(retryAnalyzer = RetryAnalyzer.class, priority = 7)
+@Test(retryAnalyzer = RetryAnalyzer.class, priority = 7, groups = "smoke")
 public void editAsupplier() throws InterruptedException, IOException {
 	loginpage.loginToQalegend(prop.getProperty("username"),prop.getProperty("password"));	
 	homepage.endTourButtonClick();
@@ -61,7 +61,7 @@ public void editAsupplier() throws InterruptedException, IOException {
 	Assert.assertEquals(userpage.getEmptyTableStatus(), "No matching records found");
 
 }
-@Test(retryAnalyzer = RetryAnalyzer.class, priority = 8)
+@Test(retryAnalyzer = RetryAnalyzer.class, priority = 8, groups = {"smoke","regression"})
 public void createACustomer() throws InterruptedException {
 	loginpage.loginToQalegend(prop.getProperty("username"), prop.getProperty("password"));
 	homepage.endTourButtonClick();
@@ -74,7 +74,7 @@ public void createACustomer() throws InterruptedException {
 	contactpage.searchCustomer(name);
 	Assert.assertEquals(contactpage.customerNameFinder(), name);
 	}
-@Test(retryAnalyzer = RetryAnalyzer.class, priority = 9)
+@Test(retryAnalyzer = RetryAnalyzer.class, priority = 9, groups = {"smoke","regression"})
 public void deleteACustomer() throws InterruptedException {
 	loginpage.loginToQalegend(prop.getProperty("username"), prop.getProperty("password"));
 	homepage.endTourButtonClick();

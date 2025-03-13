@@ -58,7 +58,7 @@ public class Baseclass {
 	}
 	
 
-	@BeforeMethod
+	@BeforeMethod(groups = {"smoke","regression"})//to run groups
 	@Parameters({"browser"})
 		
 	public void browserInitialization(String browserName) throws Exception
@@ -79,7 +79,7 @@ public class Baseclass {
 		
 	}
 	//screenshot if test fail and store in 
-	@AfterMethod
+	@AfterMethod(groups = {"smoke","regression"})
 	public void afterMethod(ITestResult itResult) throws IOException {
 		if(itResult.getStatus()==ITestResult.FAILURE) {
 			ScreenshotUtilities sc=new ScreenshotUtilities();

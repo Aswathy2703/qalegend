@@ -4,37 +4,16 @@
   <listeners>
     <listener class-name="testscripts.listeners"/>
   </listeners>
-  <test thread-count="5" parallel="methods" name="Test(failed)">
+  <test thread-count="5" name="Test(failed)">
     <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="testscripts.QalegendContacttest">
-        <methods>
-          <include name="afterMethod"/>
-          <include name="browserInitialization"/>
-          <include name="editAsupplier"/>
-          <include name="createACustomer"/>
-          <include name="addSupplier"/>
-          <include name="deleteACustomer"/>
-        </methods>
-      </class> <!-- testscripts.QalegendContacttest -->
       <class name="testscripts.Qalegendroletest">
         <methods>
           <include name="afterMethod"/>
           <include name="browserInitialization"/>
-          <include name="deleteRoleName"/>
-          <include name="createRoleName"/>
+          <include name="TC01"/>
         </methods>
       </class> <!-- testscripts.Qalegendroletest -->
-      <class name="testscripts.Qalegenduserstest">
-        <methods>
-          <include name="afterMethod"/>
-          <include name="deleteAUser"/>
-          <include name="browserInitialization"/>
-          <include name="createAUser"/>
-          <include name="editAUser"/>
-          <include name="addSalesCommissionAgent"/>
-        </methods>
-      </class> <!-- testscripts.Qalegenduserstest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

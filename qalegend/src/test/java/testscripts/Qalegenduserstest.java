@@ -45,7 +45,7 @@ userpage.searchUser(name);
 Assert.assertEquals(userpage.userNameFinder(), name);
 
 }
-@Test(retryAnalyzer = RetryAnalyzer.class, priority = 2)
+@Test(retryAnalyzer = RetryAnalyzer.class, priority = 2, groups = "smoke")
 public void deleteAUser() {
 	loginpage.loginToQalegend(prop.getProperty("username"),prop.getProperty("password"));	
 	homepage.endTourButtonClick();
@@ -62,7 +62,7 @@ public void deleteAUser() {
 	Assert.assertEquals(userpage.getEmptyTableStatus(), "No matching records found");
 
 }
-@Test(retryAnalyzer = RetryAnalyzer.class, priority = 3)
+@Test(retryAnalyzer = RetryAnalyzer.class, priority = 3, groups = "smoke")
 public void editAUser() throws InterruptedException{
 	loginpage.loginToQalegend(prop.getProperty("username"),prop.getProperty("password"));
 	homepage.endTourButtonClick();
@@ -78,7 +78,7 @@ public void editAUser() throws InterruptedException{
 	Assert.assertEquals(userpage.userNameFinder(), name);
 	
 }
-@Test(retryAnalyzer = RetryAnalyzer.class, priority = 10)
+@Test(retryAnalyzer = RetryAnalyzer.class, priority = 10,groups = "smoke")
 public void addSalesCommissionAgent() throws InterruptedException {
 	loginpage.loginToQalegend(prop.getProperty("username"),prop.getProperty("password"));	
 	homepage.endTourButtonClick();

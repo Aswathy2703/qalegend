@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite">
+<listeners>
+<listener class-name="testscripts.listeners"></listener>
+</listeners>
+  <test thread-count="2" name="Test" >
+  <parameter name="browser" value="Chrome"></parameter>
+  <groups>
+  <run>
+  <include name="smoke"></include>
+  </run>
+  </groups>
+    <classes>
+<class name="testscripts.Qalegenduserstest">
+      
+  </class>
+<class name="testscripts.QalegendContacttest">
+   
+   </class>
+<class name="testscripts.Qalegendroletest">
+   
+   </class>
+    </classes>
+  </test> 
+</suite> 

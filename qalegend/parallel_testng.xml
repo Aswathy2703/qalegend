@@ -3,30 +3,29 @@
 <listeners>
 <listener class-name="testscripts.listeners"></listener>
 </listeners>
-  <test thread-count="2" name="Test" >
+  <test thread-count="2" name="Test" parallel="Methods" >
   <parameter name="browser" value="Chrome"></parameter>
     <classes>
-<!--<class name="testscripts.Qalegenduserstest">
+<class name="testscripts.Qalegenduserstest">
       <methods>
 			<include name="createAUser"></include>
    			<include name="deleteAUser"></include>
 			<include name="editAUser"></include>
      		<include name="addSalesCommissionAgent"></include>
       </methods>
-  </class>-->
-<!--<class name="testscripts.QalegendContacttest">
+  </class>
+<class name="testscripts.QalegendContacttest">
     <methods>
     		<include name="addSupplier"></include>
     		<include name="editAsupplier"></include>
     		<include name="createACustomer"></include>
 			<include name="deleteACustomer"></include>
     </methods>
-   </class>-->
+   </class>
 <class name="testscripts.Qalegendroletest">
    <methods>
-   			<!--<include name="createRoleName"></include>
-  			<include name="deleteRoleName"></include>-->
-  			<include name="TC01"></include>
+   			<include name="createRoleName"></include>
+  			<include name="deleteRoleName"></include>
    </methods>
    </class>
     </classes>
